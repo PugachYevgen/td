@@ -1,0 +1,219 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent-color
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	font-weight: 200
+	overflow-x: hidden
+	color: $main-color
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+h1
+	font-size: 72px
+	font-weight: 500
+	line-height: 53px
+h2
+	font-size: 36px
+	font-weight: 200
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+aside
+	width: 310px
+	height: 100vh
+	background: $main-color
+	float: left
+	position: fixed
+	box-shadow: 10px 0px 40px rgba(147, 147, 147, 0.4)
+	padding-right: 20px
+	padding-top: 10px
+.accout-profile
+	display: flex
+	justify-content: flex-end
+
+.cont
+	margin-left: 310px
+.product_item
+	width: 100%
+	border-right: 1px solid $main-color
+	border-bottom: 1px solid $main-color
+
+.dropbtn
+	color: white
+	width: 50px
+	background: url("../img/punk.png") no-repeat center
+	height: 30px
+	border: none
+	cursor: pointer
+	&:focus
+		border: none
+		outline: none
+.dropdown
+	position: relative
+	display: inline-block
+
+.dropdown-content
+	display: none
+	position: absolute
+	background-color: #ffffff
+	min-width: 160px
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+	z-index: 1
+	a
+		color: black
+		padding: 12px 16px
+		text-decoration: none
+		display: block
+.show
+  display: block
+.cart
+	width: 23px
+	height: 25px
+	background: url("../img/cart.png") no-repeat center
+	color: #ffffff
+	font-size: 13px
+	font-weight: 200
+	padding: 5px
+	text-align: center
+	margin-top: 3px
+.logo
+	display: flex
+	justify-content: center
+	top: 100px
+	width: 100%
+	margin-top: 75px
+	margin-bottom: 75px
+nav
+	color: #ffffff
+	font-size: 14px
+	ul
+		list-style-type: none
+		li
+			margin-bottom: 30px
+			position: relative
+
+			height: 14px
+			transition-property: opacity
+			transition-duration: 0.5s
+			transition-delay: 0
+			&:after
+				content: ""
+				position: absolute
+				width: 70%
+				bottom: -6px
+				left: -6px
+				background-color: $main-color
+				height: 1px
+				z-index: -1
+				transition-property: all
+				transition-duration: 0.5s
+			&:hover:after
+				transform: scaleY(20) translateY(-60%)
+				background-color: #ffffff
+			&:hover
+				color: $main-color
+	ul:nth-of-type(1)
+		font-weight: 200
+	ul:last-of-type
+		font-weight: 100
+
+.nav-underline
+	width: 60%
+	height: 1px
+	background: #ffffff
+	margin-bottom: 30px
+	margin-left: 40px
+
+
+/**************  home-top_carousel ************/
+.home-top_carousel
+	.owl-stage-outer
+		height: 100%
+		.owl-stage
+			height: inherit
+			.owl-item
+				height: 100%
+				border-bottom: 1px solid $main-color
+				border-right: 1px solid $main-color
+			.owl-item.active
+				height: inherit
+	.owl-dots
+		border: 1px solid green
+		position: absolute
+		top: 30px
+		left: 30px
+		width: 150px
+		.owl-dot
+			background: #ffffff
+			width: 14px
+			height: 14px
+			border-radius: 25px
+			margin-right: 8px
+
+
+		.owl-dot.active
+			span
+				display: block
+				width: 10px
+				height: 10px
+				background: $main-color
+				border-radius: 15px
+				margin-left: 2px
+.home-top_carousel-item
+	display: flex
+	height: 100% !important
+.home-top_carousel-poster
+	background: url("../img/top-bg.png") no-repeat center
+	background-size: cover
+	color: #ffffff
+	width: 66.6666%
+	height: 100% !important
+	position: relative
+	h1
+		position: absolute
+		top: 50%
+		margin-top: -100px
+		left: 25px
+	h2
+		position: absolute
+		top: 50%
+		left: 25px
+	img
+		position: absolute
+		bottom: 50px
+		right: 50px
+.home-top_carousel-card
+	border-bottom: 1px solid $main-color
+	border-right: 1px solid $main-color
+//.discount-40
+//	width: auto
+//.test
+//	width: auto !important
+@import "media" // Always at the end
