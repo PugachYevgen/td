@@ -8,7 +8,10 @@
 ::selection
 	background-color: $accent-color
 	color: #fff
-
+button
+	cursor: pointer
+	&:focus
+		outline: none
 body
 	font-size: 16px
 	min-width: 320px
@@ -16,7 +19,7 @@ body
 	line-height: 1.65
 	font-family: $default-font
 	font-weight: 200
-	overflow-x: hidden
+	//overflow-x: hidden
 	color: $main-color
 	input, textarea
 		border: #666 1px solid
@@ -32,6 +35,31 @@ h1
 h2
 	font-size: 36px
 	font-weight: 200
+.btn
+	background: $main-color
+	color: $white-color
+	border: none
+	padding: 10px 15px
+	font-size: 14px
+	font-weight: bold
+	display: flex
+	align-items: center
+	span
+		display: block
+		transition: ease-in-out .7s
+		margin-top: 0 !important
+		margin-right: 5px
+	p
+		margin-top: 0
+		margin-bottom: 0
+	&:hover span
+		display: block
+		float: left
+		transform: rotate(540deg)
+	&:focus
+		outline: none
+
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -45,44 +73,80 @@ h2
 b, strong
 	font-weight: bold
 
-aside
+header
 	width: 310px
-	height: 100vh
+	height: 30vh
 	background: $main-color
 	float: left
 	position: fixed
 	box-shadow: 10px 0px 40px rgba(147, 147, 147, 0.4)
 	padding-right: 20px
 	padding-top: 10px
+	clear: both
+	z-index: 10
 .accout-profile
 	display: flex
 	justify-content: flex-end
-
+	.dropdown
+		margin-right: 14px
 .cont
 	margin-left: 310px
+	position: relative
+
+
+.home-section-name
+	position: absolute
+	left: 30px
+	padding: 10px 20px
+	top: -45px
+	background: $white-color
+	font-size: 36px
+	font-weight: 400
+	z-index: 5
+
+	a
+		color: $main-color
+		&:hover
+			text-decoration: none
 .product_item
 	width: 100%
-	border-right: 1px solid $main-color
+	border-left: 1px solid $main-color
 	border-bottom: 1px solid $main-color
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: flex-end
+	img
+		margin-bottom: 35px
+		width: 70%
+		transition-duration: 4s
+		&:hover
+			transform: scale(1.06)
+	span
+		margin-top: 10px
+	span:nth-of-type(1)
 
-.dropbtn
-	color: white
-	width: 50px
-	background: url("../img/punk.png") no-repeat center
-	height: 30px
-	border: none
-	cursor: pointer
-	&:focus
-		border: none
-		outline: none
-.dropdown
-	position: relative
-	display: inline-block
+	button
+		margin-top: 10px
+		margin-bottom: 45px
+//.dropbtn
+//	color: white
+//	width: 50px
+//	background: url("../img/punk.png") no-repeat center
+//	height: 30px
+//	border: none
+//	cursor: pointer
+//	&:focus
+//		border: none
+//		outline: none
+//.dropdown
+//	position: relative
+//	display: inline-block
 
 .dropdown-content
 	display: none
 	position: absolute
-	background-color: #ffffff
+	background-color: $white-color
 	min-width: 160px
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
 	z-index: 1
@@ -91,13 +155,37 @@ aside
 		padding: 12px 16px
 		text-decoration: none
 		display: block
+.dropdown2
+	position: relative
+	display: inline-block
+
+.dropdown-content2
+	display: none
+	position: absolute
+	background-color: $white-color
+	min-width: 160px
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+	z-index: 1
+	a
+		color: black
+		padding: 12px 16px
+		text-decoration: none
+		display: block
+
+
+.dropbtn2
+	background: none
+	border: none
+	color: $white-color
+	padding: 0
+	font-weight: 100
 .show
   display: block
 .cart
 	width: 23px
 	height: 25px
 	background: url("../img/cart.png") no-repeat center
-	color: #ffffff
+	color: $white-color
 	font-size: 13px
 	font-weight: 200
 	padding: 5px
@@ -111,14 +199,24 @@ aside
 	margin-top: 75px
 	margin-bottom: 75px
 nav
-	color: #ffffff
+	color: $white-color
 	font-size: 14px
+	width: 310px
+	height: 50vh
+	background: $main-color
+	float: left
+	position: fixed
+	box-shadow: 10px 40px 40px rgba(49, 49, 49, 0.85)
+	padding-right: 20px
+	padding-top: 10px
+	clear: both
+	top: 30vh
+	z-index: 10
 	ul
 		list-style-type: none
 		li
 			margin-bottom: 30px
 			position: relative
-
 			height: 14px
 			transition-property: opacity
 			transition-duration: 0.5s
@@ -136,7 +234,7 @@ nav
 				transition-duration: 0.5s
 			&:hover:after
 				transform: scaleY(20) translateY(-60%)
-				background-color: #ffffff
+				background-color: $white-color
 			&:hover
 				color: $main-color
 	ul:nth-of-type(1)
@@ -147,9 +245,10 @@ nav
 .nav-underline
 	width: 60%
 	height: 1px
-	background: #ffffff
+	background: $white-color
 	margin-bottom: 30px
 	margin-left: 40px
+
 
 
 /**************  home-top_carousel ************/
@@ -164,20 +263,58 @@ nav
 				border-right: 1px solid $main-color
 			.owl-item.active
 				height: inherit
+	.owl-nav
+		position: absolute
+		padding: 10px 20px
+		background: $white-color
+		z-index: 10
+		top: 15px
+		right: 30px
+		.owl-next
+			width: 40px
+			height: 40px
+			border-radius: 40px
+			border: 2px solid $main-color !important
+			position: relative
+			&:before
+				content: ""
+				width: 11px
+				height: 16px
+				background: url("../img/caro-arrow.png") no-repeat center
+				position: absolute
+				top: 50%
+				right: 50%
+				margin-top: -8px
+				margin-right: -6px
+				transform: rotate(180deg)
+		.owl-prev
+			width: 40px
+			height: 40px
+			border-radius: 40px
+			border: 2px solid $main-color !important
+			position: relative
+			margin-right: 15px
+			&:before
+				content: ""
+				width: 11px
+				height: 16px
+				background: url("../img/caro-arrow.png") no-repeat center
+				position: absolute
+				top: 50%
+				right: 50%
+				margin-top: -8px
+				margin-right: -5px
 	.owl-dots
-		border: 1px solid green
 		position: absolute
 		top: 30px
 		left: 30px
 		width: 150px
 		.owl-dot
-			background: #ffffff
+			background: $white-color
 			width: 14px
 			height: 14px
 			border-radius: 25px
 			margin-right: 8px
-
-
 		.owl-dot.active
 			span
 				display: block
@@ -186,16 +323,19 @@ nav
 				background: $main-color
 				border-radius: 15px
 				margin-left: 2px
+
 .home-top_carousel-item
 	display: flex
 	height: 100% !important
 .home-top_carousel-poster
 	background: url("../img/top-bg.png") no-repeat center
 	background-size: cover
-	color: #ffffff
-	width: 66.6666%
+	color: $white-color
 	height: 100% !important
 	position: relative
+	z-index: 1
+	border: 1px solid $main-color
+
 	h1
 		position: absolute
 		top: 50%
@@ -209,11 +349,107 @@ nav
 		position: absolute
 		bottom: 50px
 		right: 50px
-.home-top_carousel-card
-	border-bottom: 1px solid $main-color
+.item__card
 	border-right: 1px solid $main-color
-//.discount-40
-//	width: auto
-//.test
-//	width: auto !important
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: flex-end
+	img
+		margin-bottom: 35px
+		width: 70%
+		transition-duration: 5s
+		&:hover
+			width: 80%
+	span
+		margin-top: 10px
+	button
+		margin-top: 10px
+		margin-bottom: 45px
+
+
+.item-name
+	font-size: 15px
+	font-weight: 400
+.prise
+	font-weight: 100
+	font-size: 15px
+.home-product_carousel
+	.owl-nav
+		position: absolute
+		padding: 10px 20px
+		background: $white-color
+		z-index: 10
+		top: -30px
+		right: 30px
+		.owl-next
+			width: 40px
+			height: 40px
+			border-radius: 40px
+			border: 2px solid $main-color !important
+			position: relative
+			&:before
+				content: ""
+				width: 11px
+				height: 16px
+				background: url("../img/caro-arrow.png") no-repeat center
+				position: absolute
+				top: 50%
+				right: 50%
+				margin-top: -8px
+				margin-right: -6px
+				transform: rotate(180deg)
+		.owl-prev
+			width: 40px
+			height: 40px
+			border-radius: 40px
+			border: 2px solid $main-color !important
+			position: relative
+			margin-right: 15px
+			&:before
+				content: ""
+				width: 11px
+				height: 16px
+				background: url("../img/caro-arrow.png") no-repeat center
+				position: absolute
+				top: 50%
+				right: 50%
+				margin-top: -8px
+				margin-right: -5px
+	.owl-item active:nth-of-type(3)
+		border-right: 0
+
+
+footer
+	color: $white-color
+	font-size: 14px
+	width: 310px
+	height: 20vh
+	background: $main-color
+	float: left
+	position: fixed
+	box-shadow: 10px 40px 40px rgba(147, 147, 147, 0.4)
+	padding-top: 10px
+	clear: both
+	bottom: 0
+	z-index: 10
+	padding-left: 40px
+	a
+		color: $white-color
+		font-size: 14px
+		font-weight: 100
+		margin-top: 8px
+
+		&:hover
+
+			text-decoration: underline
+
+.social
+	margin-top: 8px
+	a
+		margin-right: 10px
+.test
+	height: 500px
+.dropdown
+	margin-left: 500px
 @import "media" // Always at the end
