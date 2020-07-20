@@ -75,11 +75,10 @@ b, strong
 
 header
 	width: 310px
-	height: 30vh
+	height: 25vh
 	background: $main-color
 	float: left
 	position: fixed
-	box-shadow: 10px 0px 40px rgba(147, 147, 147, 0.4)
 	padding-right: 20px
 	padding-top: 10px
 	clear: both
@@ -92,13 +91,13 @@ header
 .cont
 	margin-left: 310px
 	position: relative
-
+	z-index: 1
 
 .home-section-name
 	position: absolute
 	left: 30px
-	padding: 10px 20px
-	top: -45px
+	padding: 0 20px
+	top: -33px
 	background: $white-color
 	font-size: 36px
 	font-weight: 400
@@ -124,63 +123,22 @@ header
 			transform: scale(1.06)
 	span
 		margin-top: 10px
-	span:nth-of-type(1)
+		text-align: center
 
 	button
 		margin-top: 10px
 		margin-bottom: 45px
-//.dropbtn
-//	color: white
-//	width: 50px
-//	background: url("../img/punk.png") no-repeat center
-//	height: 30px
-//	border: none
-//	cursor: pointer
-//	&:focus
-//		border: none
-//		outline: none
-//.dropdown
-//	position: relative
-//	display: inline-block
-
-.dropdown-content
-	display: none
-	position: absolute
-	background-color: $white-color
-	min-width: 160px
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
-	z-index: 1
-	a
-		color: black
-		padding: 12px 16px
-		text-decoration: none
-		display: block
-.dropdown2
-	position: relative
-	display: inline-block
-
-.dropdown-content2
-	display: none
-	position: absolute
-	background-color: $white-color
-	min-width: 160px
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
-	z-index: 1
-	a
-		color: black
-		padding: 12px 16px
-		text-decoration: none
-		display: block
-
-
-.dropbtn2
-	background: none
+.dropbtn
+	color: white
+	width: 50px
+	background: url("../img/punk.png") no-repeat center
+	height: 30px
 	border: none
-	color: $white-color
-	padding: 0
-	font-weight: 100
-.show
-  display: block
+	cursor: pointer
+	&:focus
+		border: none
+		outline: none
+
 .cart
 	width: 23px
 	height: 25px
@@ -200,56 +158,113 @@ header
 	margin-bottom: 75px
 nav
 	color: $white-color
-	font-size: 14px
+	font-size: 15px
+	line-height: inherit
 	width: 310px
-	height: 50vh
+	height: 60vh
 	background: $main-color
 	float: left
 	position: fixed
-	box-shadow: 10px 40px 40px rgba(49, 49, 49, 0.85)
 	padding-right: 20px
 	padding-top: 10px
 	clear: both
-	top: 30vh
-	z-index: 10
+	top: 25vh
+	z-index: 11
 	ul
 		list-style-type: none
+		padding: 0
+		margin-left: 40px
+		width: 100%
 		li
 			margin-bottom: 30px
 			position: relative
-			height: 14px
+			height: fit-content
 			transition-property: opacity
 			transition-duration: 0.5s
 			transition-delay: 0
-			&:after
-				content: ""
-				position: absolute
-				width: 70%
-				bottom: -6px
-				left: -6px
-				background-color: $main-color
-				height: 1px
-				z-index: -1
-				transition-property: all
-				transition-duration: 0.5s
-			&:hover:after
-				transform: scaleY(20) translateY(-60%)
-				background-color: $white-color
-			&:hover
-				color: $main-color
+			width: 60%
+
+
+			a:not(.dropdown-item)
+				color: $white-color
+				display: block
+				position: relative
+				width: fit-content
+				&:after
+					content: ""
+					position: absolute
+					width: 100%
+					bottom: 0
+					left: 0
+					background-color: $main-color
+					height: 2px
+					z-index: -1
+					transition-property: all
+					transition-duration: 0.5s
+				&:hover
+					color: $white-color
+					text-decoration: none
+				&:hover:after
+					transform: scaleX(1)
+					background-color: $white-color
+			button
+				border: none
+				background: transparent
+				padding: 0
+				font-weight: 100
+				width: fit-content
+				color: $white-color
+				position: relative
+				&:after
+					content: ""
+					position: absolute
+					width: 100%
+					bottom: 0
+					left: 0
+					background-color: $main-color
+					height: 2px
+					z-index: -1
+					transition-property: all
+					transition-duration: 0.5s
+				&:hover:after
+					transform: scaleX(1)
+					background-color: $white-color
 	ul:nth-of-type(1)
 		font-weight: 200
 	ul:last-of-type
 		font-weight: 100
-
+.dropdown-menu
+	border-radius: 0
+	border: none
+	box-shadow: 10px 0px 40px rgba(147, 147, 147, 0.4)
+	left: 80% !important
+	p
+		font-size: 16px
+		font-weight: 400
+		padding-left: 24px
+		padding-right: 24px
+.dropdown-item
+	font-size: 15px
+	font-weight: 100
 .nav-underline
 	width: 60%
 	height: 1px
 	background: $white-color
 	margin-bottom: 30px
 	margin-left: 40px
+	left: 60% !important
 
 
+.nav-arrow
+	width: 7px
+	height: 11px
+	background: url("../img/arrow.png") center no-repeat
+	position: absolute
+	right: 0
+	top: 0
+	transform: rotate(-90deg)
+	transition: .3s
+	margin-top: 7px
 
 /**************  home-top_carousel ************/
 .home-top_carousel
@@ -350,7 +365,6 @@ nav
 		bottom: 50px
 		right: 50px
 .item__card
-	border-right: 1px solid $main-color
 	display: flex
 	flex-direction: column
 	align-items: center
@@ -420,17 +434,39 @@ nav
 		border-right: 0
 
 
+.social
+	margin-top: 8px
+	a
+		margin-right: 10px
+.footer
+	height: 20px
+	width: calc(100% - 310px)
+	margin-left: 309px
+	background: url("../img/footer.png") center no-repeat
+	position: relative
+	z-index: 8
+	margin-top: -1px
+.rotate
+	transition: .3s
+	transform: rotate(630deg)
+.shadow
+	position: fixed
+	height: 100vh
+	width: 310px
+	left: 0
+	z-index: 9
+	box-shadow: 20px 0 40px rgba(49, 49, 49, 0.85)
+
 footer
 	color: $white-color
 	font-size: 14px
 	width: 310px
-	height: 20vh
+	height: 15vh
 	background: $main-color
 	float: left
 	position: fixed
-	box-shadow: 10px 40px 40px rgba(147, 147, 147, 0.4)
+
 	padding-top: 10px
-	clear: both
 	bottom: 0
 	z-index: 10
 	padding-left: 40px
@@ -443,13 +479,4 @@ footer
 		&:hover
 
 			text-decoration: underline
-
-.social
-	margin-top: 8px
-	a
-		margin-right: 10px
-.test
-	height: 500px
-.dropdown
-	margin-left: 500px
 @import "media" // Always at the end
