@@ -5,9 +5,11 @@ $(function() {
         $(".home-top_carousel").owlCarousel({
             loop: true,
             items: 1,
-            autoplay: false,
+            autoplay: true,
             dots: true,
             nav: true,
+            // autoWidth: true,
+            stagePadding: -1,
             navText: "",
             responsive: {
                 0: {
@@ -33,7 +35,8 @@ $(function() {
         $(".home-product_carousel").owlCarousel({
             loop: true,
             items: 3,
-            autoplay: false,
+            autoplay: true,
+
             dots: false,
             nav: true,
             navText: "",
@@ -46,9 +49,9 @@ $(function() {
                 },
                 576: {
                     nav: false,
-                    items: 3
+                    items: 1
                 },
-                1024: {
+                992: {
                     nav: false,
                     items: 3
                 },
@@ -67,17 +70,22 @@ $(function() {
             $('.item__card').width(width);
             $('.home-top_carousel-poster').width(width * 2)
         } res();
-        //
-        // $(window).resize(function() {
-        //     res();
-        // });
-        window.addEventListener('resize', function(){
+        window.addEventListener('resize', function() {
             setTimeout(res, 300);
-            console.log(123123)});
+        });
+
     });
 
 
-
+    // $(document).ready(function () {
+    //     function asideHeight() {
+    //         let height = $('body').height();
+    //         $('aside').height(height);
+    //     } asideHeight();
+    //     window.addEventListener('resize', function() {
+    //         setTimeout(asideHeight, 300);
+    //     });
+    // });
 
     $(document).ready(function () {
         $('.btn-secondary').click(function () {
@@ -85,7 +93,7 @@ $(function() {
         })
     })
 
-});
+}); //end f
 
 
 

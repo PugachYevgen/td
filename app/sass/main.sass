@@ -72,17 +72,18 @@ h2
 
 b, strong
 	font-weight: bold
-
+aside
+	float: left
+	height: 100%
 header
 	width: 310px
-	height: 25vh
+	height: 237px
 	background: $main-color
-	float: left
 	position: fixed
 	padding-right: 20px
 	padding-top: 10px
-	clear: both
 	z-index: 10
+	top: 0
 .accout-profile
 	display: flex
 	justify-content: flex-end
@@ -156,19 +157,19 @@ header
 	width: 100%
 	margin-top: 75px
 	margin-bottom: 75px
+
 nav
 	color: $white-color
 	font-size: 15px
 	line-height: inherit
 	width: 310px
-	height: 60vh
+	height: 568px
 	background: $main-color
-	float: left
 	position: fixed
 	padding-right: 20px
 	padding-top: 10px
 	clear: both
-	top: 25vh
+	top: 237px
 	z-index: 11
 	ul
 		list-style-type: none
@@ -233,19 +234,43 @@ nav
 		font-weight: 200
 	ul:last-of-type
 		font-weight: 100
+.burger
+	display: none
 .dropdown-menu
 	border-radius: 0
 	border: none
 	box-shadow: 10px 0px 40px rgba(147, 147, 147, 0.4)
-	left: 80% !important
+	//left: 80% !important
+	z-index: 50
+	top: -600px
+	left: 500px
+	//max-height: 400px
 	p
 		font-size: 16px
 		font-weight: 400
 		padding-left: 24px
 		padding-right: 24px
+//.dropdown-menu-cont
+//	display: flex
+//	justify-content: left
+//	flex-direction: column
+//	flex-wrap: wrap
+//	max-height: 300px
+.last.show
+	display: flex
+	flex-wrap: wrap
+	float: none
+	height: 450px
+	min-width: 25px
+	flex-direction: column
+	justify-content: flex-start
+	max-width: 1000px
+	width: 700px
+
 .dropdown-item
 	font-size: 15px
 	font-weight: 100
+	width: auto
 .nav-underline
 	width: 60%
 	height: 1px
@@ -278,6 +303,7 @@ nav
 				border-right: 1px solid $main-color
 			.owl-item.active
 				height: inherit
+
 	.owl-nav
 		position: absolute
 		padding: 10px 20px
@@ -430,8 +456,10 @@ nav
 				right: 50%
 				margin-top: -8px
 				margin-right: -5px
-	.owl-item active:nth-of-type(3)
-		border-right: 0
+	.owl-item.active:first-of-type
+		border: $test
+		.product_item
+			border-left: none
 
 
 .social
@@ -453,23 +481,23 @@ nav
 	position: fixed
 	height: 100vh
 	width: 310px
-	left: 0
+	top: 0
 	z-index: 9
 	box-shadow: 20px 0 40px rgba(49, 49, 49, 0.85)
+	background: $main-color
 
 footer
 	color: $white-color
 	font-size: 14px
 	width: 310px
-	height: 15vh
+	height: 143px
 	background: $main-color
-	float: left
 	position: fixed
-
 	padding-top: 10px
-	bottom: 0
+	top: 805px
 	z-index: 10
 	padding-left: 40px
+
 	a
 		color: $white-color
 		font-size: 14px
